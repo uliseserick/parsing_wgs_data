@@ -1,17 +1,20 @@
 #!/bin/bash
 
 
+# this script runs multiple software to map trimmed sequencing reads to an genome assembly
+# the script uses the samtols (Danecek et al., 2021) and bowtie2 (Langmead & Salzberg, 2012) and bbmap (https://www.osti.gov/biblio/1241166)
+
 # Index 
 
-#for file in *_scaffolds.fasta
+for file in *_scaffolds.fasta
 
-#do
+do
 
-#n=${file%%_scaffolds.fasta}
+n=${file%%_scaffolds.fasta}
 
-#/srv/home/cmartinez/anaconda3/envs/bowtie2/bin/bowtie2-build ${n}_scaffolds.fasta  ${n}_scaffolds.btindex
+bowtie2-build ${n}_scaffolds.fasta  ${n}_scaffolds.btindex
 
-#done
+done
 
 
 
